@@ -1,0 +1,139 @@
+.background {
+  overflow-x: clip;
+  padding: var(--space-xl) clamp(0.75rem, 3vw, 2.5rem);
+}
+
+.sheet {
+  position: relative;
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: clamp(3rem, 6vw, 4.5rem) clamp(1.5rem, 5vw, 4rem) clamp(2.5rem, 5vw, 3.5rem);
+  background-color: #f1eee8;
+  box-shadow: var(--lift-2);
+}
+
+.tapeLeft {
+  top: 0.6rem;
+  left: -1.6rem;
+}
+
+.tapeRight {
+  top: 0.6rem;
+  right: -1.6rem;
+}
+
+.tab {
+  position: absolute;
+  top: -1.05rem;
+  left: clamp(1.5rem, 5vw, 4rem);
+  z-index: 3;
+  padding: 0.3rem 1rem;
+  background: var(--ink);
+  color: var(--card);
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 1.1rem;
+  box-shadow: var(--lift-1);
+}
+
+.columns {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+}
+
+.column + .column {
+  padding-left: clamp(2rem, 5vw, 4.5rem);
+  border-left: 1px solid rgba(28, 27, 25, 0.18);
+}
+
+.heading {
+  margin-bottom: 1rem;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: var(--step-3);
+  line-height: 1.1;
+}
+
+.spaced {
+  margin-top: 2.4rem;
+}
+
+.entries {
+  display: grid;
+  gap: 1.2rem;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+}
+
+.strong {
+  font-weight: 600;
+}
+
+.soft {
+  color: var(--ink-soft);
+}
+
+.period {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+.lang {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 18rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px dotted rgba(28, 27, 25, 0.3);
+}
+
+.skillGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.8rem;
+}
+
+.subheading {
+  margin-bottom: 0.6rem;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.15rem;
+}
+
+.skillList {
+  display: grid;
+  gap: 0.2rem;
+  font-size: 0.9375rem;
+}
+
+.handnote {
+  margin-top: 2.2rem;
+  font-family: var(--font-hand);
+  font-size: 1.3rem;
+  color: var(--seal);
+  transform: rotate(-2deg);
+}
+
+@media (max-width: 900px) {
+  .columns {
+    grid-template-columns: 1fr;
+  }
+
+  .column + .column {
+    padding-left: 0;
+    padding-top: 2rem;
+    border-left: 0;
+    border-top: 1px solid rgba(28, 27, 25, 0.18);
+  }
+}
+
+@media (max-width: 560px) {
+  .skillGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

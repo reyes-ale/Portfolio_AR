@@ -1,0 +1,480 @@
+/* ==========================================================
+   Portada: agenda abierta
+   ========================================================== */
+.hero {
+  overflow-x: clip;
+  padding: clamp(1.5rem, 4vw, 3.5rem) clamp(0.75rem, 3vw, 2.5rem) var(--space-xl);
+}
+
+.binder {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 72px 1fr;
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: #2b2927;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 30px 60px -20px rgba(28, 27, 25, 0.55),
+    0 8px 16px -6px rgba(28, 27, 25, 0.3);
+}
+
+/* Correas de cuero arriba y abajo del lomo */
+.strap {
+  position: absolute;
+  left: 50%;
+  z-index: 1;
+  width: 110px;
+  height: 22px;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, var(--seal-light), var(--seal));
+  box-shadow: inset 0 -2px 3px rgba(0, 0, 0, 0.3);
+}
+.strapTop {
+  top: -12px;
+  border-radius: 6px 6px 2px 2px;
+}
+.strapBottom {
+  bottom: -12px;
+  border-radius: 2px 2px 6px 6px;
+}
+
+/* ---------- Páginas ---------- */
+.page {
+  position: relative;
+  display: grid;
+  min-height: 40rem;
+  padding: clamp(1.25rem, 2.5vw, 2.25rem);
+  background-color: var(--paper);
+  grid-row: 1;
+}
+
+.pageLeft {
+  grid-column: 1;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto minmax(13rem, 1fr) auto;
+  grid-template-areas:
+    'tag photo'
+    '. .'
+    'contact .';
+  padding-left: clamp(2.5rem, 4vw, 3.5rem);
+  border-radius: 4px 0 0 4px;
+  background-image: linear-gradient(90deg, transparent 88%, rgba(28, 27, 25, 0.1));
+  /* hojas apiladas en el borde */
+  box-shadow: -3px 0 0 var(--paper-edge), -6px 0 0 #cfcac0;
+}
+
+.pageRight {
+  grid-column: 3;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto minmax(13rem, 1fr) auto;
+  grid-template-areas:
+    'stamp photo'
+    '. .'
+    'label label';
+  border-radius: 0 4px 4px 0;
+  background-image: linear-gradient(270deg, transparent 88%, rgba(28, 27, 25, 0.1));
+  box-shadow: 3px 0 0 var(--paper-edge), 6px 0 0 #cfcac0;
+}
+
+.rings {
+  grid-column: 2;
+  grid-row: 1;
+  background-color: var(--paper);
+}
+
+/* Numeración del margen, como en una libreta */
+.margin {
+  position: absolute;
+  top: 14%;
+  bottom: 14%;
+  left: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-serif);
+  font-size: 0.7rem;
+  color: var(--ink-faint);
+}
+
+/* ---------- Piezas ---------- */
+.slot {
+  position: relative;
+  z-index: 2;
+  animation: settle 700ms var(--ease-settle) both;
+  animation-delay: var(--delay, 0ms);
+}
+
+.tagSlot {
+  grid-area: tag;
+  align-self: start;
+  margin-top: 2.5rem;
+  margin-left: -2.6rem;
+}
+
+.photoLeftSlot {
+  grid-area: photo;
+  justify-self: end;
+  width: min(100%, 11.5rem);
+  margin-right: 1rem;
+}
+
+.contactSlot {
+  grid-area: contact;
+  align-self: end;
+  width: max-content;
+  max-width: 100%;
+}
+
+.cardSeal {
+  top: -1.3rem;
+  left: 50%;
+  translate: -50% 0;
+}
+
+.stampSlot {
+  grid-area: stamp;
+  align-self: start;
+  justify-self: center;
+  margin-top: 0.5rem;
+}
+
+.stamp {
+  display: grid;
+  justify-items: center;
+  padding: 0.7rem 1.1rem 0.6rem;
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 3px var(--paper), inset 0 0 0 4px var(--ink);
+  text-align: center;
+  line-height: 1.05;
+}
+
+.stampMain {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.45rem;
+}
+
+.stampSub {
+  margin-top: 0.25rem;
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+}
+
+.photoRightSlot {
+  grid-area: photo;
+  justify-self: end;
+  width: min(100%, 11rem);
+  margin-top: -3.2rem;
+  margin-right: -2.6rem;
+}
+
+.stack {
+  position: relative;
+}
+
+/* hojas sueltas detrás de la foto */
+.stack::before,
+.stack::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--card);
+  box-shadow: var(--lift-1);
+}
+.stack::before {
+  transform: rotate(7deg) translate(6px, 4px);
+}
+.stack::after {
+  transform: rotate(-2deg) translate(-4px, 2px);
+}
+.stack > figure {
+  z-index: 1;
+}
+
+.clip {
+  top: -1.6rem;
+  left: 1.2rem;
+}
+
+.labelSlot {
+  grid-area: label;
+  display: grid;
+  justify-items: end;
+  align-self: end;
+  text-align: right;
+}
+
+.role {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 1.1rem + 1.6vw, 2.4rem);
+  line-height: 1.1;
+}
+
+.roleBox {
+  display: inline-block;
+  padding: 0.05em 0.35em 0.12em;
+  border: 1.5px solid var(--ink);
+  background: #e0dccf;
+  box-shadow: 3px 3px 0 rgba(28, 27, 25, 0.18);
+  font-style: italic;
+}
+
+.disciplines {
+  margin-top: 0.9rem;
+  font-family: var(--font-serif);
+  font-size: 1.02rem;
+  line-height: 1.35;
+  text-align: left;
+}
+
+.disciplines li:nth-child(2) {
+  padding-left: 0.4rem;
+}
+.disciplines li:nth-child(3) {
+  padding-left: 0.8rem;
+}
+
+.place {
+  margin-top: 1.4rem;
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+}
+
+/* ---------- Título ---------- */
+.title {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  z-index: 5;
+  align-self: center;
+  display: grid;
+  grid-template-columns: 1fr 72px 1fr;
+  align-items: baseline;
+  margin-top: -1.5rem;
+  pointer-events: none;
+  color: var(--ink);
+  line-height: 0.8;
+  animation: titleIn 900ms var(--ease-settle) 700ms both;
+}
+
+.port {
+  grid-column: 1;
+  justify-self: end;
+  font-family: var(--font-pixel);
+  font-weight: 500;
+  font-size: clamp(4.5rem, 1rem + 11vw, 10.5rem);
+  letter-spacing: 0.02em;
+  margin-right: -0.1em;
+}
+
+.folio {
+  grid-column: 2 / 4;
+  justify-self: start;
+  position: relative;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(5rem, 1.4rem + 12.5vw, 12rem);
+  letter-spacing: -0.02em;
+  margin-left: -0.05em;
+}
+
+.year {
+  position: absolute;
+  top: 0.05em;
+  right: -0.95em;
+  font-style: normal;
+  font-size: 0.26em;
+  letter-spacing: 0;
+}
+
+.focus {
+  max-width: var(--page-width);
+  margin: 1.6rem auto 0;
+  padding-right: 1rem;
+  text-align: right;
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  white-space: pre;
+}
+
+@keyframes settle {
+  from {
+    opacity: 0;
+    transform: translateY(-18px) rotate(-4deg) scale(1.04);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes titleIn {
+  from {
+    opacity: 0;
+    letter-spacing: 0.12em;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 1100px) {
+  .binder,
+  .title {
+    grid-template-columns: 1fr 52px 1fr;
+  }
+
+  .pageLeft,
+  .pageRight {
+    min-height: 42rem;
+  }
+
+  .pageLeft {
+    grid-template-areas:
+      'tag tag'
+      '. .'
+      'contact contact';
+  }
+
+  /* la página izquierda se queda solo con etiqueta y contacto */
+  .photoLeftSlot {
+    display: none;
+  }
+
+  .tagSlot {
+    margin-left: -1.8rem;
+  }
+
+  .photoRightSlot {
+    width: min(100%, 9.5rem);
+    margin-right: -1.8rem;
+  }
+
+  .contactSlot {
+    width: max-content;
+    max-width: 100%;
+  }
+}
+
+/* ---------- Móvil: una sola hoja ---------- */
+@media (max-width: 900px) {
+  .binder {
+    max-width: 34rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'tag tag'
+      'photoL photoR'
+      'title title'
+      'stamp stamp'
+      'label label'
+      'contact contact';
+    gap: 1.4rem 1rem;
+    padding: 2.6rem 1.25rem 2rem;
+    background: var(--paper);
+    border-radius: 6px;
+  }
+
+  /* anillado superior */
+  .binder::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 8%;
+    right: 8%;
+    height: 14px;
+    background: radial-gradient(circle, var(--desk-shadow) 0 4px, transparent 5px) 0 0 / 26px 14px repeat-x;
+  }
+
+  .page {
+    display: contents;
+  }
+
+  .rings,
+  .strap,
+  .margin {
+    display: none;
+  }
+
+  .tagSlot {
+    grid-area: tag;
+    margin: 0;
+  }
+
+  .photoLeftSlot {
+    display: block;
+    grid-area: photoL;
+    justify-self: stretch;
+    width: auto;
+    margin: 0;
+  }
+
+  .photoRightSlot {
+    grid-area: photoR;
+    justify-self: stretch;
+    width: auto;
+    margin: 0.8rem 0 0;
+  }
+
+  .tagSlot {
+    margin-left: 0;
+  }
+
+  .stampSlot {
+    grid-area: stamp;
+    margin: 0;
+  }
+
+  .labelSlot {
+    grid-area: label;
+    justify-items: start;
+    text-align: left;
+  }
+
+  .contactSlot {
+    grid-area: contact;
+    justify-self: center;
+    width: max-content;
+    max-width: 100%;
+    margin-top: 1rem;
+  }
+
+  .title {
+    grid-area: title;
+    display: flex;
+    justify-content: center;
+    margin: 0.5rem 0 1rem;
+  }
+
+  .port {
+    font-size: clamp(3.6rem, 17vw, 5.5rem);
+  }
+
+  .folio {
+    font-size: clamp(4rem, 19vw, 6.2rem);
+  }
+
+  .year {
+    right: -0.6em;
+    top: -0.5em;
+  }
+
+  .focus {
+    text-align: center;
+    padding: 0;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+  }
+}

@@ -1,0 +1,130 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: clamp(270px, 27vw, 350px);
+  background: var(--card);
+  box-shadow: var(--lift-1);
+  transform: rotate(var(--tilt, 0deg));
+}
+
+/* renglones suaves, como hoja de libreta */
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    180deg,
+    transparent 0 31px,
+    rgba(28, 27, 25, 0.045) 31px 32px
+  );
+  pointer-events: none;
+}
+
+.media {
+  flex-shrink: 0;
+}
+
+.tape {
+  top: -0.6rem;
+  left: 50%;
+  translate: -50% 0;
+  z-index: 2;
+}
+
+.clip {
+  top: -1.7rem;
+  left: -0.35rem;
+  z-index: 2;
+}
+
+.note {
+  position: absolute;
+  top: -1.5rem;
+  right: 1.1rem;
+  font-family: var(--font-hand);
+  font-size: 1.2rem;
+  color: var(--seal);
+  transform: rotate(-6deg);
+  z-index: 2;
+}
+
+.body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.1rem 1.2rem 1.3rem;
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: start;
+  gap: 0.3rem 0.7rem;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: var(--step-1);
+  line-height: 1.15;
+}
+
+.subtitle {
+  margin-top: 0.15rem;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.date {
+  flex-shrink: 0;
+  padding: 0.1rem 0.5rem;
+  border: 1px solid var(--ink-faint);
+  border-radius: 999px;
+  font-size: 0.7rem;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+.summary {
+  margin-top: 0.6rem;
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.4rem 0.8rem;
+  margin-top: auto;
+  padding-top: 0.9rem;
+}
+
+.tags {
+  font-size: 0.75rem;
+  color: var(--ink-faint);
+}
+
+.link {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  text-decoration: underline;
+  text-decoration-color: var(--seal);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+
+.link:hover {
+  color: var(--seal);
+}

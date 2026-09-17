@@ -1,0 +1,63 @@
+/* ==========================================================
+   Design tokens
+   Cambia aquí colores, tipografías y espaciados de todo el sitio.
+   ========================================================== */
+:root {
+  /* Superficies */
+  --desk: #c9c7c2;          /* escritorio gris detrás de la agenda */
+  --desk-shadow: #a9a6a0;
+  --paper: #ebe8e1;         /* hojas */
+  --paper-edge: #dcd8cf;
+  --card: #f7f5f0;          /* polaroids y tarjetas */
+  --night: #161514;         /* sección oscura */
+  --night-soft: #242220;
+
+  /* Tinta */
+  --ink: #1c1b19;
+  --ink-soft: #55524c;
+  --ink-faint: #8a867e;
+  --on-night: #ece9e3;
+  --on-night-soft: #a7a39b;
+
+  /* Acento único: lacre */
+  --seal: #6b1e2b;
+  --seal-light: #8c3544;
+  --seal-ink: #f1e4e1;
+
+  /* Metales y cintas */
+  --metal: #b9b7b2;
+  --metal-dark: #7d7b76;
+  --tape: rgba(226, 219, 199, 0.78);
+
+  /* Tipografía */
+  --font-body: 'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-pixel: 'Pixelify Sans', 'Courier New', monospace;
+  --font-hand: 'Nothing You Could Do', 'Segoe Print', cursive;
+
+  /* Escala tipográfica (razón ~1.25) */
+  --step--1: 0.8125rem;
+  --step-0: 1rem;
+  --step-1: 1.25rem;
+  --step-2: 1.5625rem;
+  --step-3: clamp(1.75rem, 1.4rem + 1.6vw, 2.5rem);
+  --step-4: clamp(2.4rem, 1.8rem + 3vw, 4rem);
+
+  /* Espaciado */
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-s: 0.75rem;
+  --space-m: 1.25rem;
+  --space-l: 2rem;
+  --space-xl: 3.25rem;
+  --space-2xl: clamp(4rem, 3rem + 5vw, 7rem);
+
+  --page-width: 1180px;
+  --measure: 62ch;
+
+  /* Sombras de objetos físicos (no de "cards") */
+  --lift-1: 0 1px 1px rgba(28, 27, 25, 0.12), 0 3px 8px rgba(28, 27, 25, 0.14);
+  --lift-2: 0 2px 3px rgba(28, 27, 25, 0.14), 0 14px 30px -8px rgba(28, 27, 25, 0.35);
+
+  --ease-settle: cubic-bezier(0.2, 0.8, 0.25, 1.05);
+}

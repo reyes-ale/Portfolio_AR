@@ -1,0 +1,66 @@
+.reel {
+  position: relative;
+  padding: 1.85rem 0 0.75rem;
+  overflow: hidden;
+}
+
+.reel::before,
+.reel::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: clamp(1.5rem, 5vw, 4rem);
+  z-index: 3;
+  pointer-events: none;
+}
+
+.reel::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--paper), transparent);
+}
+
+.reel::after {
+  right: 0;
+  background: linear-gradient(-90deg, var(--paper), transparent);
+}
+
+.track {
+  display: flex;
+  gap: 1.75rem;
+  width: max-content;
+}
+
+.looping .track {
+  animation: scroll-reel linear infinite;
+  animation-duration: calc(var(--count, 4) * 7s);
+  will-change: transform;
+}
+
+.looping:hover .track,
+.looping:focus-within .track {
+  animation-play-state: paused;
+}
+
+.still {
+  overflow: visible;
+}
+
+.still .track {
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.slide {
+  flex: 0 0 auto;
+}
+
+@keyframes scroll-reel {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

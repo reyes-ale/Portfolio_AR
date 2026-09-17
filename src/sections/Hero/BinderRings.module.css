@@ -1,0 +1,62 @@
+.spine {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-block: 12%;
+  background:
+    linear-gradient(90deg,
+      rgba(28, 27, 25, 0.22) 0%,
+      rgba(28, 27, 25, 0.05) 30%,
+      rgba(255, 255, 255, 0.25) 50%,
+      rgba(28, 27, 25, 0.05) 70%,
+      rgba(28, 27, 25, 0.22) 100%);
+}
+
+/* Barra metálica central */
+.spine::before {
+  content: '';
+  position: absolute;
+  top: 8%;
+  bottom: 8%;
+  left: 50%;
+  width: 6px;
+  transform: translateX(-50%);
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--metal-dark), #e4e2dd 45%, var(--metal) 60%, var(--metal-dark));
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+}
+
+.ring {
+  position: relative;
+  width: 64px;
+  height: 20px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #e9e7e2;
+  border-left-color: var(--metal);
+  border-right-color: var(--metal-dark);
+  border-bottom-color: transparent;
+  filter: drop-shadow(0 2px 1.5px rgba(0, 0, 0, 0.35));
+}
+
+/* Agujeros de las hojas */
+.ring::before,
+.ring::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--desk-shadow);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.45);
+}
+.ring::before {
+  left: -8px;
+}
+.ring::after {
+  right: -8px;
+}

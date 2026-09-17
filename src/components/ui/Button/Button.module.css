@@ -1,0 +1,50 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  padding: 0.6rem 1.3rem;
+  border: 1.5px solid transparent;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+
+.solid {
+  background: var(--ink);
+  color: var(--card);
+}
+.solid:hover {
+  background: var(--seal);
+}
+
+.outline {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+.outline:hover {
+  background: var(--ink);
+  color: var(--card);
+}
+
+.solidLight {
+  background: var(--on-night);
+  color: var(--night);
+}
+.solidLight:hover {
+  background: var(--seal-ink);
+}
+
+.outlineLight {
+  border-color: var(--on-night-soft);
+  color: var(--on-night);
+}
+.outlineLight:hover {
+  border-color: var(--on-night);
+  background: rgba(236, 233, 227, 0.08);
+}

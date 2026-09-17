@@ -1,0 +1,4 @@
+/* Punto de entrada de estilos globales (el orden importa) */
+@import './tokens.css';
+@import './textures.css';
+@import './base.css';

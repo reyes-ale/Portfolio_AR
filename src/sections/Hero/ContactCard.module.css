@@ -1,0 +1,35 @@
+.card {
+  position: relative;
+  width: min(100%, 19rem);
+  padding: 2.1rem 1.3rem 1.2rem;
+  background: var(--card);
+  box-shadow: var(--lift-2);
+  transform: rotate(-1.5deg);
+}
+
+.heading {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 2.1rem;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--ink);
+  text-align: center;
+  margin-bottom: 0.8rem;
+}
+
+.list {
+  display: grid;
+  gap: 0.2rem;
+  font-size: 0.8125rem;
+}
+
+.list a {
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.list a:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}

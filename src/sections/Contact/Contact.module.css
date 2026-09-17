@@ -1,0 +1,97 @@
+.contact {
+  padding: var(--space-2xl) clamp(0.75rem, 3vw, 2.5rem) var(--space-xl);
+}
+
+.letter {
+  position: relative;
+  max-width: 44rem;
+  margin: 0 auto;
+  background-color: var(--card);
+  box-shadow: var(--lift-2);
+  overflow: visible;
+}
+
+/* solapa del sobre */
+.flap {
+  display: block;
+  height: clamp(4.5rem, 12vw, 7rem);
+  background:
+    linear-gradient(to bottom right, transparent 49.6%, rgba(28, 27, 25, 0.16) 50%, transparent 50.6%) left / 50% 100% no-repeat,
+    linear-gradient(to bottom left, transparent 49.6%, rgba(28, 27, 25, 0.16) 50%, transparent 50.6%) right / 50% 100% no-repeat,
+    linear-gradient(to bottom, #e4e0d7, var(--card));
+  clip-path: polygon(0 0, 100% 0, 100% 0, 50% 100%, 0 0);
+}
+
+.seal {
+  top: clamp(4.5rem, 12vw, 7rem);
+  left: 50%;
+  translate: -50% -58%;
+}
+
+.body {
+  position: relative;
+  z-index: 2;
+  padding: 3.4rem clamp(1.5rem, 6vw, 4rem) clamp(2rem, 5vw, 3rem);
+  text-align: center;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-style: italic;
+  font-size: var(--step-4);
+  line-height: 1.05;
+}
+
+.lede {
+  max-width: 44ch;
+  margin: 1rem auto 0;
+  color: var(--ink-soft);
+}
+
+.rows {
+  display: grid;
+  gap: 0;
+  max-width: 30rem;
+  margin: 2rem auto 0;
+  text-align: left;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  gap: 1rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid rgba(28, 27, 25, 0.14);
+}
+
+.row dt {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--ink-faint);
+}
+
+.row dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.row a {
+  text-decoration: none;
+}
+
+.row a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.cta {
+  margin-top: 2rem;
+}
+
+@media (max-width: 480px) {
+  .row {
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
+  }
+}

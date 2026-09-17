@@ -1,0 +1,13 @@
+.clip {
+  position: absolute;
+  width: 34px;
+  height: auto;
+  z-index: 3;
+  transform: rotate(var(--rotate, 0deg));
+  filter: drop-shadow(1px 2px 1.5px rgba(28, 27, 25, 0.35));
+}
+
+.clip path {
+  stroke: var(--metal-dark);
+  stroke-width: 3.2;
+}

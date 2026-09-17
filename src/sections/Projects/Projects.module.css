@@ -1,0 +1,43 @@
+.projects {
+  padding: var(--space-2xl) clamp(0.75rem, 3vw, 2.5rem) var(--space-xl);
+}
+
+.folder {
+  max-width: var(--page-width);
+  margin: 0 auto;
+}
+
+.panel {
+  position: relative;
+  padding: clamp(1.5rem, 4vw, 3.25rem);
+  border-radius: 0 16px 16px 16px;
+  background-color: var(--paper);
+  box-shadow: var(--lift-2);
+}
+
+.header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: end;
+  gap: 0.8rem 2rem;
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-m);
+  border-bottom: 1.5px solid var(--ink);
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: var(--step-4);
+  line-height: 1;
+  letter-spacing: -0.015em;
+}
+
+.lede {
+  max-width: 36ch;
+  color: var(--ink-soft);
+}
+
