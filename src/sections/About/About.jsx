@@ -1,9 +1,17 @@
 import { profile } from '@/data/profile';
 import { Polaroid, Tape } from '@/components/paper';
 import Button from '@/components/ui/Button/Button.jsx';
+import { useLanguage } from '@/i18n/LanguageContext.jsx';
+import { pick } from '@/i18n/pick.js';
 import styles from './About.module.css';
 
 export default function About() {
+  const { lang, t } = useLanguage();
+  const role = pick(profile.role, lang);
+  const roleSuffix = pick(profile.roleSuffix, lang);
+  const studentLine = pick(profile.studentLine, lang);
+  const location = pick(profile.location, lang);
+
   return (
     <section id="about" className={`${styles.about} grain grain-light`} aria-labelledby="about-title">
       <div className={styles.inner}>
@@ -17,16 +25,16 @@ export default function About() {
             className={styles.print}
           >
             <span className={styles.overTop} aria-hidden="true">
-              {profile.role}
+              {role}
             </span>
             <span className={styles.overBottom} aria-hidden="true">
-              {profile.roleSuffix}
+              {roleSuffix}
             </span>
           </Polaroid>
         </div>
 
         <div className={styles.text}>
-          <p className={styles.hello}>hi, I’m</p>
+          <p className={styles.hello}>{t.about.hello}</p>
           <h2 id="about-title" className={styles.name}>
             <span className={styles.circled}>
               {profile.firstName}
@@ -38,21 +46,19 @@ export default function About() {
           </h2>
 
           <div className={styles.intro}>
-            {profile.intro.map((paragraph) => (
+            {pick(profile.intro, lang).map((paragraph) => (
               <p key={paragraph.slice(0, 24)}>{paragraph}</p>
             ))}
           </div>
 
-          <p className={styles.meta}>
-            {profile.studentLine} at {profile.school}, based in {profile.location}.
-          </p>
+          <p className={styles.meta}>{t.about.meta(studentLine, profile.school, location)}</p>
 
           <div className={styles.actions}>
             <Button href="#projects" variant="solidLight">
-              See my projects
+              {t.about.seeProjects}
             </Button>
             <Button href={`mailto:${profile.contact.email}`} variant="outlineLight">
-              Send me an email
+              {t.about.sendEmail}
             </Button>
           </div>
         </div>

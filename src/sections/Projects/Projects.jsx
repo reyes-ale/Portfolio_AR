@@ -1,11 +1,13 @@
 import { useMemo, useState } from 'react';
 import { projectFilters, projects } from '@/data/projects';
+import { useLanguage } from '@/i18n/LanguageContext.jsx';
 import FolderTabs from './FolderTabs.jsx';
 import ProjectReel from './ProjectReel.jsx';
 import styles from './Projects.module.css';
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState('all');
+  const { t } = useLanguage();
 
   const counts = useMemo(() => {
     const result = { all: projects.length };
@@ -39,12 +41,9 @@ export default function Projects() {
         >
           <header className={styles.header}>
             <h2 id="projects-title" className={styles.title}>
-              Projects and experience
+              {t.projects.heading}
             </h2>
-            <p className={styles.lede}>
-              Websites I’ve built and shipped, a hackathon build, and the workshops where I teach
-              kids to code.
-            </p>
+            <p className={styles.lede}>{t.projects.lede}</p>
           </header>
 
           <ProjectReel projects={visible} />

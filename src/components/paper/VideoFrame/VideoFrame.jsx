@@ -2,13 +2,21 @@ import { useState } from 'react';
 import styles from './VideoFrame.module.css';
 
 /**
- * Vista previa en video de un proyecto (autoplay, loop, sin sonido).
- * Si `src` no carga, muestra un marcador con el nombre del archivo,
- * igual que Polaroid hace con las fotos.
+ * Vista previa de un proyecto: video en loop si hay `src`, si no una `photo`
+ * fija, y si ninguna carga, un marcador con el nombre del archivo (igual que
+ * Polaroid hace con las fotos).
  */
-export default function VideoFrame({ src, label, className = '', style }) {
+export default function VideoFrame({ src, photo, label, className = '', style }) {
   const [failed, setFailed] = useState(!src);
   const fileName = src ? src.split('/').pop() : 'preview.mp4';
+
+  if (failed && photo) {
+    return (
+      <div className={`${styles.frame} ${className}`} style={style}>
+        <img className={styles.photo} src={photo} alt={label ?? ''} loading="lazy" />
+      </div>
+    );
+  }
 
   return (
     <div className={`${styles.frame} ${className}`} style={style}>

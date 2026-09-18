@@ -33,6 +33,29 @@
   font-size: 0.8rem;
 }
 
+.right {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.langToggle {
+  padding: 0.3rem 0.7rem;
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+  background: transparent;
+  font-family: var(--font-pixel);
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.langToggle:hover {
+  background: var(--ink);
+  color: var(--card);
+}
+
 .list {
   display: flex;
   gap: 0.4rem;

@@ -2,3 +2,8 @@ node_modules
 dist
 .DS_Store
 *.log
+
+# Videos y descargables pesados: se suben a Cloudinary, no al repo.
+# Ver public/videos/README.md
+public/videos/*.mp4
+public/videos/*.zip

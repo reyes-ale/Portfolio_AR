@@ -1,16 +1,26 @@
 import { profile } from '@/data/profile';
 import { WaxSeal } from '@/components/paper';
 import Button from '@/components/ui/Button/Button.jsx';
+import { useLanguage } from '@/i18n/LanguageContext.jsx';
+import { pick } from '@/i18n/pick.js';
 import styles from './Contact.module.css';
 
 export default function Contact() {
   const { contact } = profile;
+  const { lang, t } = useLanguage();
+  const location = pick(profile.location, lang);
 
   const rows = [
-    { label: 'Email', value: contact.email, href: `mailto:${contact.email}` },
-    { label: 'LinkedIn', value: contact.linkedin, href: contact.linkedinHref, external: true },
-    { label: 'Phone', value: contact.phone, href: contact.phoneHref },
-    { label: 'Based in', value: profile.location },
+    { id: 'email', label: t.contact.email, value: contact.email, href: `mailto:${contact.email}` },
+    {
+      id: 'linkedin',
+      label: t.contact.linkedin,
+      value: contact.linkedin,
+      href: contact.linkedinHref,
+      external: true,
+    },
+    { id: 'phone', label: t.contact.phone, value: contact.phone, href: contact.phoneHref },
+    { id: 'location', label: t.contact.basedIn, value: location },
   ];
 
   return (
@@ -21,16 +31,13 @@ export default function Contact() {
 
         <div className={styles.body}>
           <h2 id="contact-title" className={styles.title}>
-            Let’s build something
+            {t.contact.title}
           </h2>
-          <p className={styles.lede}>
-            If you’re working on a website, a product interface or anything that needs careful
-            frontend work, I’d like to hear about it.
-          </p>
+          <p className={styles.lede}>{t.contact.lede}</p>
 
           <dl className={styles.rows}>
             {rows.map((row) => (
-              <div key={row.label} className={styles.row}>
+              <div key={row.id} className={styles.row}>
                 <dt>{row.label}</dt>
                 <dd>
                   {row.href ? (
@@ -49,7 +56,7 @@ export default function Contact() {
           </dl>
 
           <Button href={`mailto:${contact.email}`} className={styles.cta}>
-            Send me an email
+            {t.contact.sendEmail}
           </Button>
         </div>
       </div>

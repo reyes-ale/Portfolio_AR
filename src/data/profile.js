@@ -7,20 +7,33 @@ export const profile = {
   shortName: 'Alejandra Reyes',
   initials: 'AR',
   year: '26',
-  role: 'Frontend',
-  roleSuffix: 'Developer',
-  studentLine: 'Systems Engineering student',
+  role: { en: 'Frontend', es: 'Frontend' },
+  roleSuffix: { en: 'Developer', es: 'Developer' },
+  studentLine: { en: 'Systems Engineering student', es: 'Estudiante de Ingeniería en Sistemas' },
   school: 'UNITEC',
-  disciplines: ['Web developer', 'UI/UX enthusiast', 'Software tester'],
-  focusLine: ['Frontend', 'UI/UX', 'Software testing'],
-  location: 'Tegucigalpa, Honduras',
+  disciplines: {
+    en: ['Web developer', 'UI/UX enthusiast', 'Software tester'],
+    es: ['Desarrolladora web', 'Entusiasta de UI/UX', 'Tester de software'],
+  },
+  focusLine: {
+    en: ['Frontend', 'UI/UX', 'Software testing'],
+    es: ['Frontend', 'UI/UX', 'Pruebas de software'],
+  },
+  location: { en: 'Tegucigalpa, Honduras', es: 'Tegucigalpa, Honduras' },
   locationShort: 'TGU, HN.',
 
-  intro: [
-    'I’m a Systems Engineering student who builds, tests and ships web applications and responsive websites, mostly with React, HTML, CSS and JavaScript.',
-    'I care about how a product looks and feels as much as whether it works. That’s why I spend time on cross-browser checks, performance and the small interaction details before anything goes live.',
-    'Right now I’m most interested in frontend development, web design and UI/UX, and those are the areas where I want to keep growing.',
-  ],
+  intro: {
+    en: [
+      'I’m a Systems Engineering student who builds, tests and ships web applications and responsive websites, mostly with React, HTML, CSS and JavaScript.',
+      'I care about how a product looks and feels as much as whether it works. That’s why I spend time on cross-browser checks, performance and the small interaction details before anything goes live.',
+      'Right now I’m most interested in frontend development, web design and UI/UX, and those are the areas where I want to keep growing.',
+    ],
+    es: [
+      'Soy estudiante de Ingeniería en Sistemas y construyo, pruebo y publico aplicaciones web y sitios responsivos, principalmente con React, HTML, CSS y JavaScript.',
+      'Me importa tanto cómo se ve y se siente un producto como si funciona bien. Por eso dedico tiempo a revisar la compatibilidad entre navegadores, el rendimiento y los pequeños detalles de interacción antes de publicar algo.',
+      'Ahora mismo lo que más me interesa es el desarrollo frontend, el diseño web y UI/UX, y son las áreas en las que quiero seguir creciendo.',
+    ],
+  },
 
   contact: {
     email: 'alejandranireyes06@gmail.com',

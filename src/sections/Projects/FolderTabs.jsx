@@ -1,4 +1,6 @@
 import { useRef } from 'react';
+import { useLanguage } from '@/i18n/LanguageContext.jsx';
+import { pick } from '@/i18n/pick.js';
 import styles from './FolderTabs.module.css';
 
 /**
@@ -6,6 +8,7 @@ import styles from './FolderTabs.module.css';
  */
 export default function FolderTabs({ filters, counts, activeId, onChange, panelId }) {
   const refs = useRef([]);
+  const { lang, t } = useLanguage();
 
   const handleKeyDown = (event, index) => {
     const last = filters.length - 1;
@@ -23,7 +26,7 @@ export default function FolderTabs({ filters, counts, activeId, onChange, panelI
   };
 
   return (
-    <div role="tablist" aria-label="Filter projects" className={styles.tabs}>
+    <div role="tablist" aria-label={t.projects.filterLabel} className={styles.tabs}>
       {filters.map((filter, index) => {
         const selected = filter.id === activeId;
         return (
@@ -42,7 +45,7 @@ export default function FolderTabs({ filters, counts, activeId, onChange, panelI
             onClick={() => onChange(filter.id)}
             onKeyDown={(event) => handleKeyDown(event, index)}
           >
-            {filter.label}
+            {pick(filter.label, lang)}
             <span className={styles.count}>{counts[filter.id] ?? 0}</span>
           </button>
         );

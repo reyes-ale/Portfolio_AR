@@ -1,16 +1,21 @@
 import { profile } from '@/data/profile';
 import { NameTag, PaperClip, Polaroid, WaxSeal } from '@/components/paper';
+import { useLanguage } from '@/i18n/LanguageContext.jsx';
+import { pick } from '@/i18n/pick.js';
 import BinderRings from './BinderRings.jsx';
 import ContactCard from './ContactCard.jsx';
 import styles from './Hero.module.css';
 
 export default function Hero() {
   const { photos } = profile;
+  const { lang, t } = useLanguage();
+  const role = pick(profile.role, lang);
+  const roleSuffix = pick(profile.roleSuffix, lang);
 
   return (
     <section id="cover" className={styles.hero} aria-labelledby="cover-title">
       <h1 id="cover-title" className="visually-hidden">
-        {profile.fullName}, {profile.role} {profile.roleSuffix} portfolio
+        {profile.fullName}, {role} {roleSuffix} portfolio
       </h1>
 
       <div className={styles.binder}>
@@ -51,8 +56,8 @@ export default function Hero() {
         <div className={`${styles.page} ${styles.pageRight} grain`}>
           <div className={`${styles.slot} ${styles.stampSlot}`} style={{ '--delay': '200ms' }}>
             <p className={styles.stamp}>
-              <span className={styles.stampMain}>Systems Engineering</span>
-              <span className={styles.stampSub}>student at {profile.school}</span>
+              <span className={styles.stampMain}>{t.hero.stampMain}</span>
+              <span className={styles.stampSub}>{t.hero.studentAt(profile.school)}</span>
             </p>
           </div>
 
@@ -70,10 +75,10 @@ export default function Hero() {
 
           <div className={`${styles.slot} ${styles.labelSlot}`} style={{ '--delay': '600ms' }}>
             <p className={styles.role}>
-              <span className={styles.roleBox}>{profile.role}</span> {profile.roleSuffix}
+              <span className={styles.roleBox}>{role}</span> {roleSuffix}
             </p>
             <ul role="list" className={styles.disciplines}>
-              {profile.disciplines.map((item, index) => (
+              {pick(profile.disciplines, lang).map((item, index) => (
                 <li key={item}>
                   {index > 0 && <span aria-hidden="true">/ </span>}
                   {item}
@@ -93,7 +98,7 @@ export default function Hero() {
         </p>
       </div>
 
-      <p className={styles.focus}>{profile.focusLine.join('  |  ')}</p>
+      <p className={styles.focus}>{pick(profile.focusLine, lang).join('  |  ')}</p>
     </section>
   );
 }
