@@ -35,7 +35,7 @@ export default function VideoFrame({ src, photo, label, className = '', style })
           videoRef.current?.pause?.();
         }
       },
-      { rootMargin: '200px 600px' },
+      { rootMargin: '0px 80px' },
     );
     observer.observe(node);
     return () => observer.disconnect();

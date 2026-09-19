@@ -10,13 +10,17 @@ function isCloudinaryUrl(url) {
 
 /**
  * Inserta transformaciones justo después de /upload/: calidad/códec
- * automáticos, ancho máximo, y recorta a los primeros `maxSeconds` (son
- * grabaciones de pantalla completas de hasta 2 minutos, pero en la tarjeta
- * solo se usan como vista previa en loop corto).
+ * automáticos, ancho máximo, toma los primeros `sourceSeconds` (son
+ * grabaciones de pantalla completas de hasta 2 minutos) y los reproduce al
+ * doble de velocidad, para que la tarjeta muestre el doble de contenido en
+ * la mitad del tiempo real (~sourceSeconds/2) sin pesar más.
  */
-export function optimizedVideoUrl(url, width = 780, maxSeconds = 20) {
+export function optimizedVideoUrl(url, width = 780, sourceSeconds = 40) {
   if (!isCloudinaryUrl(url)) return url;
-  return url.replace('/upload/', `/upload/q_auto,f_auto,w_${width},du_${maxSeconds}/`);
+  return url.replace(
+    '/upload/',
+    `/upload/q_auto:eco,f_auto,w_${width},du_${sourceSeconds},e_accelerate:100/`,
+  );
 }
 
 /** Miniatura jpg autogenerada de un video de Cloudinary, para usar como poster. */
