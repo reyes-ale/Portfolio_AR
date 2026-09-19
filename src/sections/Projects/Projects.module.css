@@ -1,9 +1,9 @@
 .projects {
-  padding: var(--space-2xl) clamp(0.75rem, 3vw, 2.5rem) var(--space-xl);
+  padding: var(--space-2xl) clamp(0.75rem, 1.5vw, 1.5rem) var(--space-xl);
 }
 
 .folder {
-  max-width: var(--page-width);
+  max-width: 1600px;
   margin: 0 auto;
 }
 

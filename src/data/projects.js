@@ -25,8 +25,8 @@ export const projects = [
     featured: true,
     video: 'https://res.cloudinary.com/dyav94mbo/video/upload/v1789761803/colmena.mp4',
     summary: {
-      en: 'A responsive platform that connects businesses and individuals with students, graduates and freelancers who offer creative services.',
-      es: 'Una plataforma responsiva que conecta a empresas y personas con estudiantes, graduados y freelancers que ofrecen servicios creativos.',
+      en: 'A responsive platform connecting businesses and people with students, graduates and freelancers offering creative services.',
+      es: 'Plataforma responsiva que conecta a empresas y personas con estudiantes, graduados y freelancers que ofrecen servicios creativos.',
     },
     points: {
       en: [
@@ -54,8 +54,8 @@ export const projects = [
     category: 'web',
     video: 'https://res.cloudinary.com/dyav94mbo/video/upload/v1789761778/besteam-landing.mp4',
     summary: {
-      en: 'A visually driven, responsive landing page that turns BeSteamHN’s identity and content into a structured web experience.',
-      es: 'Una landing page visual y responsiva que convierte la identidad y el contenido de BeSteamHN en una experiencia web estructurada.',
+      en: 'A visual, responsive landing page that turns BeSteamHN’s STEAM education identity and content into a clear web experience.',
+      es: 'Landing page visual y responsiva que convierte la identidad y el contenido educativo de BeSteamHN en una experiencia web clara.',
     },
     points: {
       en: [
@@ -86,8 +86,8 @@ export const projects = [
     category: 'hackathon',
     video: 'https://res.cloudinary.com/dyav94mbo/video/upload/v1789761747/besteam-ai-tutor.mp4',
     summary: {
-      en: 'An AI-powered learning platform with interactive courses and module-by-module progress, built by a small team on a tight deadline.',
-      es: 'Una plataforma de aprendizaje con IA, con cursos interactivos y progreso por módulos, construida por un equipo pequeño en un plazo muy ajustado.',
+      en: 'An AI-powered learning platform with interactive courses, module-by-module progress and NFT certificates on the Solana blockchain.',
+      es: 'Plataforma de aprendizaje con IA: cursos interactivos, progreso por módulos y certificados NFT en la blockchain de Solana.',
     },
     points: {
       en: [
@@ -141,8 +141,8 @@ export const projects = [
     category: 'web',
     video: 'https://res.cloudinary.com/dyav94mbo/video/upload/v1789762603/la-oficina.mp4',
     summary: {
-      en: 'A complete restaurant website with an admin panel that lets staff manage the menu and have it update on the live site.',
-      es: 'Un sitio web completo para un restaurante, con un panel de administración que permite al personal manejar el menú y actualizarlo en el sitio en vivo.',
+      en: 'A full restaurant website with a custom CMS and admin panel for staff to manage and update the live menu.',
+      es: 'Sitio web completo para un restaurante, con CMS a la medida y panel de administración para manejar el menú en vivo.',
     },
     points: {
       en: [
@@ -167,8 +167,8 @@ export const projects = [
     category: 'web',
     video: 'https://res.cloudinary.com/dyav94mbo/video/upload/v1789761843/hbo-max-mockup.mp4',
     summary: {
-      en: 'A front-end mockup that recreates the HBO Max experience, with browsing rows and a movie catalog built entirely for practice.',
-      es: 'Un mockup de frontend que recrea la experiencia de HBO Max, con filas de exploración y un catálogo de películas hecho por práctica.',
+      en: 'A front-end mockup recreating the HBO Max experience with Next.js, including browsing rows and a movie catalog.',
+      es: 'Mockup de frontend hecho con Next.js que recrea HBO Max, con filas de exploración y catálogo de películas.',
     },
     points: {
       en: [
@@ -194,8 +194,8 @@ export const projects = [
     category: 'software',
     video: 'https://res.cloudinary.com/dyav94mbo/video/upload/v1789761736/mini-access.mp4',
     summary: {
-      en: 'A simple desktop app for creating databases and managing them with basic SQL commands, with user accounts and login.',
-      es: 'Una app de escritorio sencilla para crear bases de datos y manejarlas con comandos SQL básicos, con cuentas de usuario e inicio de sesión.',
+      en: 'A simple Java Swing desktop app to create and manage databases with basic SQL commands and login.',
+      es: 'App de escritorio en Java Swing para crear y manejar bases de datos con comandos SQL básicos y login.',
     },
     points: {
       en: [
@@ -224,8 +224,8 @@ export const projects = [
     category: 'software',
     video: 'https://res.cloudinary.com/dyav94mbo/video/upload/v1789761715/gui-olympics.mp4',
     summary: {
-      en: 'A simple desktop simulation of a mini swimming Olympics, built as my first hands-on project working with GUIs in Java.',
-      es: 'Una simulación de escritorio sencilla de unas mini olimpiadas de natación, mi primer proyecto práctico trabajando con GUIs en Java.',
+      en: 'A simple Java Swing simulation of mini swimming Olympics, my first hands-on project working with GUIs.',
+      es: 'Simulación en Java Swing de unas mini olimpiadas de natación, mi primer proyecto práctico con GUIs.',
     },
     points: {
       en: [

@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  width: clamp(270px, 27vw, 350px);
+  width: clamp(270px, 24vw, 385px);
   background: var(--card);
   box-shadow: var(--lift-1);
   transform: rotate(var(--tilt, 0deg));

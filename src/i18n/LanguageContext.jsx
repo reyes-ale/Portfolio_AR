@@ -19,7 +19,7 @@ function readQueryLanguage() {
 }
 
 export function LanguageProvider({ children }) {
-  const [lang, setLang] = useState(() => readQueryLanguage() ?? readStoredLanguage() ?? 'en');
+  const [lang, setLang] = useState(() => readQueryLanguage() ?? readStoredLanguage() ?? 'es');
 
   useEffect(() => {
     document.documentElement.lang = lang;

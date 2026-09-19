@@ -19,7 +19,7 @@ export const strings = {
     },
     projects: {
       heading: 'Projects and experience',
-      lede: 'Websites I’ve built and shipped, a hackathon build, and the workshops where I teach kids to code.',
+      lede: 'A bit about my projects and experience: from web platforms to my first steps in Java.',
       filterLabel: 'Filter projects',
       latest: 'latest!',
       skillsUsed: 'Skills used: ',
@@ -65,7 +65,7 @@ export const strings = {
     },
     projects: {
       heading: 'Proyectos y experiencia',
-      lede: 'Sitios web que he construido y publicado, un proyecto de hackathon y los talleres donde enseño a programar a niños.',
+      lede: 'Un poco sobre mis proyectos y mi experiencia: de plataformas web a mis primeros pasos en Java.',
       filterLabel: 'Filtrar proyectos',
       latest: '¡el más reciente!',
       skillsUsed: 'Habilidades usadas: ',

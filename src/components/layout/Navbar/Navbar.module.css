@@ -41,19 +41,21 @@
 
 .langToggle {
   padding: 0.3rem 0.7rem;
-  border: 1.5px solid var(--ink);
+  border: 1.5px solid var(--seal);
   border-radius: 999px;
   background: transparent;
+  color: var(--seal);
   font-family: var(--font-pixel);
   font-size: 0.75rem;
+  font-weight: 600;
   letter-spacing: 0.02em;
   cursor: pointer;
   transition: background-color 150ms ease, color 150ms ease;
 }
 
 .langToggle:hover {
-  background: var(--ink);
-  color: var(--card);
+  background: var(--seal);
+  color: var(--seal-ink);
 }
 
 .list {
