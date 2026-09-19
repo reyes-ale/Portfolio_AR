@@ -7,9 +7,11 @@ import styles from './VideoFrame.module.css';
  * fija, y si ninguna carga, un marcador con el nombre del archivo (igual que
  * Polaroid hace con las fotos).
  *
- * Para no cargar y reproducir todos los videos de la cinta a la vez (lento
- * y pesado), el video real solo se asigna cuando la tarjeta entra cerca de
- * la pantalla, y se pausa/reanuda según esté visible. Mientras tanto se ve
+ * Para no cargar y decodificar todos los videos de la cinta a la vez (lento
+ * y pesado, más que nada por la decodificación en sí, no solo el peso del
+ * archivo): el archivo se asigna un poco antes de que la tarjeta sea
+ * visible, pero solo se REPRODUCE cuando queda bien centrada/visible
+ * (60%+); el resto se pausa aunque se asomen un poco. Mientras tanto se ve
  * el poster (miniatura jpg autogenerada por Cloudinary).
  */
 export default function VideoFrame({ src, photo, label, className = '', style }) {
@@ -28,14 +30,14 @@ export default function VideoFrame({ src, photo, label, className = '', style })
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setShouldLoad(true);
+        if (entry.isIntersecting) setShouldLoad(true);
+        if (entry.intersectionRatio >= 0.6) {
           videoRef.current?.play?.().catch(() => {});
         } else {
           videoRef.current?.pause?.();
         }
       },
-      { rootMargin: '0px 80px' },
+      { rootMargin: '0px 80px', threshold: [0, 0.6] },
     );
     observer.observe(node);
     return () => observer.disconnect();

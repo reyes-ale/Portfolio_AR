@@ -15,16 +15,16 @@ function isCloudinaryUrl(url) {
  * doble de velocidad, para que la tarjeta muestre el doble de contenido en
  * la mitad del tiempo real (~sourceSeconds/2) sin pesar más.
  */
-export function optimizedVideoUrl(url, width = 780, sourceSeconds = 40) {
+export function optimizedVideoUrl(url, width = 560, sourceSeconds = 120) {
   if (!isCloudinaryUrl(url)) return url;
   return url.replace(
     '/upload/',
-    `/upload/q_auto:eco,f_auto,w_${width},du_${sourceSeconds},e_accelerate:100/`,
+    `/upload/q_auto:eco,f_auto,w_${width},fps_15,du_${sourceSeconds},e_accelerate:100/`,
   );
 }
 
 /** Miniatura jpg autogenerada de un video de Cloudinary, para usar como poster. */
-export function videoPosterUrl(url, width = 780) {
+export function videoPosterUrl(url, width = 560) {
   if (!isCloudinaryUrl(url)) return undefined;
   return optimizedVideoUrl(url, width).replace(/\.[a-z0-9]+$/i, '.jpg');
 }
