@@ -1,7 +1,6 @@
 .reel {
   position: relative;
   padding: 1.85rem 0 0.75rem;
-  overflow: hidden;
 }
 
 .reel::before,
@@ -28,22 +27,24 @@
 .track {
   display: flex;
   gap: 1.75rem;
-  width: max-content;
 }
 
 .looping .track {
-  animation: scroll-reel linear infinite;
-  animation-duration: calc(var(--count, 4) * 7s);
-  will-change: transform;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: grab;
+  scroll-behavior: auto;
+  overscroll-behavior-x: contain;
 }
 
-.looping:hover .track,
-.looping:focus-within .track {
-  animation-play-state: paused;
+.looping .track::-webkit-scrollbar {
+  display: none;
 }
 
-.still {
-  overflow: visible;
+.looping .track:active {
+  cursor: grabbing;
 }
 
 .still .track {
@@ -56,11 +57,45 @@
   flex: 0 0 auto;
 }
 
-@keyframes scroll-reel {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
+.arrow {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  z-index: 4;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1.5px solid var(--ink);
+  border-radius: 50%;
+  background: var(--card);
+  box-shadow: var(--lift-1);
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+}
+
+.arrow:hover {
+  background: var(--seal);
+  border-color: var(--seal);
+  color: var(--seal-ink);
+}
+
+.arrowPrev {
+  left: -0.25rem;
+}
+
+.arrowNext {
+  right: -0.25rem;
+}
+
+@media (max-width: 640px) {
+  .arrow {
+    width: 2.25rem;
+    height: 2.25rem;
+    font-size: 1.25rem;
   }
 }
