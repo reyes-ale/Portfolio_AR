@@ -100,6 +100,8 @@ export const projects = [
       ],
     },
     tags: ['AI', 'Solana', 'Web3', 'Testing'],
+    link: 'https://besteamhn-ai-tutor.vercel.app/',
+    linkLabel: { en: 'Visit the AI Tutor', es: 'Visitar el AI Tutor' },
   },
   {
     id: 'workshops',
